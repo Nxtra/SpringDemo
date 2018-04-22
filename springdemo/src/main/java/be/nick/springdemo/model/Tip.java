@@ -1,10 +1,16 @@
 package be.nick.springdemo.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Tip {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long tipSentence;
 
+    @ManyToOne
     private User owner;
 
     public Tip(Long tipSentence, User owner) {

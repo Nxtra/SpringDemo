@@ -1,9 +1,15 @@
 package be.nick.springdemo.model;
 
+import org.springframework.lang.UsesSunHttpServer;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstname;
     private String lastname;
@@ -11,6 +17,7 @@ public class User {
     private String password;
     private String email;
 
+    @OneToMany(targetEntity = Tip.class, mappedBy = "owner")
     private List<Tip> tipList;
 
     public User(String firstname, String lastname, String username, String password, String email, List<Tip> tipList) {
