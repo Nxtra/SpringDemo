@@ -1,13 +1,22 @@
 package be.nick.springdemo.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Tip {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long tipSentence;
+    private String tipSentence;
 
+    @ManyToOne
     private User owner;
 
-    public Tip(Long tipSentence, User owner) {
+    public Tip() {
+    }
+
+    public Tip(String tipSentence, User owner) {
         this.tipSentence = tipSentence;
         this.owner = owner;
     }
@@ -16,7 +25,7 @@ public class Tip {
     public String toString() {
         return "Tip{" +
                 "id=" + id +
-                ", tipSentence=" + tipSentence +
+                ", tipSentence='" + tipSentence + '\'' +
                 ", owner=" + owner +
                 '}';
     }
@@ -29,11 +38,11 @@ public class Tip {
         this.id = id;
     }
 
-    public Long getTipSentence() {
+    public String getTipSentence() {
         return tipSentence;
     }
 
-    public void setTipSentence(Long tipSentence) {
+    public void setTipSentence(String tipSentence) {
         this.tipSentence = tipSentence;
     }
 
@@ -45,3 +54,4 @@ public class Tip {
         this.owner = owner;
     }
 }
+
