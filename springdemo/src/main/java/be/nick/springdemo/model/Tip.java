@@ -25,7 +25,7 @@ public class Tip {
     public String toString() {
         return "Tip{" +
                 "id=" + id +
-                ", tipSentence='" + tipSentence + '\'' +
+                ", tipSentence='" + tipSentence +
                 ", owner=" + owner +
                 '}';
     }
