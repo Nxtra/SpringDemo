@@ -1,7 +1,5 @@
 package be.nick.springdemo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 @Entity
@@ -13,7 +11,6 @@ public class Tip {
     private String tipSentence;
 
     @ManyToOne
-    @JsonIgnore
     private User owner;
 
     public Tip() {
