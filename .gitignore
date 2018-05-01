@@ -1,5 +1,9 @@
-*/target/
-!.mvn/wrapper/maven-wrapper.jar
+### maven and class files ###
+*target/
+*.mvn/
+mvnw
+mvnw.cmd
+
 
 ### STS ###
 .apt_generated
@@ -23,3 +27,6 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### mac ###
+.DS_Store
