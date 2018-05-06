@@ -18,8 +18,12 @@ import javax.validation.Valid;
 @RequestMapping("/user")
 public class UserController {
 
-    @Autowired
     private UserRepository repository;
+
+    @Autowired
+    public UserController(UserRepository userRepository){
+        this.repository = userRepository;
+    }
 
     @GetMapping()
     public String userForm(Model model, User user) {
@@ -35,6 +39,6 @@ public class UserController {
         }
 
         repository.save(user);
-        return "user";
+        return "userSuccess";
     }
 }
